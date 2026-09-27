@@ -220,11 +220,13 @@
     .nav-name { font-size: .9rem; }
   }
 
-  .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
   .theme-toggle {
     position: relative;
     width: 38px;
