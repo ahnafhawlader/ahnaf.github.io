@@ -534,6 +534,27 @@ try {
     border: 3px solid var(--bg);
     box-shadow: 0 0 0 2px var(--coral);
   }
+  #experience .section-head h2::after,
+  #interests .section-head h2::after {
+    display: inline-block; margin-left: .28em; color: var(--coral);
+    font-family: var(--font-body); font-size: .55em; vertical-align: middle;
+  }
+  #experience .section-head h2::after { content: '✦'; }
+  #interests .section-head h2::after { content: '♪'; color: var(--blue-ink); }
+  #experience .section-head.revealed h2::after,
+  #interests .section-head.revealed h2::after { animation: section-spark .75s ease-out both; }
+  .t-item.revealed::before { animation: timeline-ping .8s ease-out; }
+  .t-item:nth-child(even).revealed::before { animation-delay: .1s; }
+  @keyframes section-spark {
+    from { opacity: 0; transform: rotate(-25deg) scale(.45); }
+    60% { opacity: 1; transform: rotate(12deg) scale(1.25); }
+    to { opacity: 1; transform: rotate(0) scale(1); }
+  }
+  @keyframes timeline-ping {
+    0% { transform: scale(.55); box-shadow: 0 0 0 2px var(--coral), 0 0 0 2px var(--tag-bg); }
+    55% { transform: scale(1.13); box-shadow: 0 0 0 2px var(--coral), 0 0 0 11px transparent; }
+    100% { transform: scale(1); box-shadow: 0 0 0 2px var(--coral), 0 0 0 11px transparent; }
+  }
   .t-date { font-size: 0.82rem; color: var(--blue-ink); margin-bottom: 4px; }
   .t-item h3 { font-size: 1.08rem; color: var(--cream); margin-bottom: 2px; }
   .t-org { font-size: 0.92rem; color: var(--cream-dim); margin-bottom: 8px; display: block; }
@@ -778,6 +799,25 @@ try {
   .interest-card:hover { transform: translateY(-6px) rotate(-.5deg); border-color: var(--teal); box-shadow: 0 16px 30px rgba(51,50,74,.09); }
   .interest-card:hover::after { transform: scale(1.5); }
   .interest-icon { display: block; font-size: 2rem; margin-bottom: 18px; transition: transform .3s ease; }
+  .interest-card.revealed:nth-child(1) .interest-icon { animation: music-sway .7s ease-out .1s; }
+  .interest-card.revealed:nth-child(2) .interest-icon { animation: ball-bounce .8s ease-out .16s; }
+  .interest-card.revealed:nth-child(3) .interest-icon { animation: spark-turn .75s ease-out .22s; }
+  @keyframes music-sway {
+    0% { transform: rotate(-13deg) scale(.8); }
+    55% { transform: rotate(10deg) scale(1.12); }
+    100% { transform: none; }
+  }
+  @keyframes ball-bounce {
+    0% { transform: translateY(-13px) scale(.88); }
+    45% { transform: translateY(3px) scale(1.06,.94); }
+    70% { transform: translateY(-5px); }
+    100% { transform: none; }
+  }
+  @keyframes spark-turn {
+    0% { transform: rotate(-20deg) scale(.7); opacity: .5; }
+    65% { transform: rotate(12deg) scale(1.16); opacity: 1; }
+    100% { transform: none; opacity: 1; }
+  }
   .interest-card:hover .interest-icon { transform: rotate(-12deg) scale(1.15); }
   .interest-card h3 { font-size: 1.18rem; }
   .interest-card p { color: var(--cream-dim); margin: 10px 0 0; font-size: .95rem; }
