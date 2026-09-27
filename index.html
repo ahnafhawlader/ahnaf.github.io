@@ -94,6 +94,18 @@
     --btn-shadow: rgba(127,225,173,0.34); --icon-bg: rgba(118,217,206,0.24);
     --tag-bg: rgba(199,240,139,0.32);
   }
+  /* Electric Blue */
+  :root[data-theme="ocean"] {
+    --bg: #0A1A32; --bg-alt: #102546; --bg-panel: #173153;
+    --cream: #F2FAFF; --cream-dim: #B7D4E8;
+    --marigold: #82E5FF; --coral: #B997FF; --teal: #61DCCB;
+    --pink-ink: #D7B9FF; --blue-ink: #8CE8FF;
+    --line: rgba(242,250,255,0.19); --dot-color: rgba(97,220,203,0.2);
+    --nav-bg: rgba(10,26,50,0.93); --pill-bg: rgba(242,250,255,0.08);
+    --subtle-fill: rgba(242,250,255,0.075); --btn-ink: #082038;
+    --btn-shadow: rgba(130,229,255,0.28); --icon-bg: rgba(97,220,203,0.18);
+    --tag-bg: rgba(185,151,255,0.19);
+  }
 
   body { transition: background 0.25s ease, color 0.25s ease; }
   *, *::before, *::after { box-sizing: inherit; }
@@ -191,6 +203,11 @@
     .theme-picker { gap: 4px; }
     .swatch { width: 31px; height: 31px; }
   }
+  @media (max-width: 340px) {
+    .theme-picker { gap: 3px; }
+    .swatch { width: 27px; height: 27px; }
+    .mobile-menu summary { padding-inline: 10px; }
+  }
 
   .nav-right {
     display: flex;
@@ -222,7 +239,7 @@
   .swatch {
     width: 34px; height: 34px; border-radius: 50%; padding: 0; cursor: pointer;
     border: 2px solid var(--line);
-    background: linear-gradient(135deg, var(--sw1), var(--sw2));
+    background: linear-gradient(135deg, var(--sw-bg) 0 31%, var(--sw1) 32% 67%, var(--sw2) 68%);
     transition: transform 0.15s ease, border-color 0.15s ease;
   }
   .swatch:hover { transform: scale(1.15); }
@@ -787,13 +804,14 @@
         <li><a href="#play">Play</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="theme-picker" role="group" aria-label="Choose color theme">
+      <div class="theme-picker" role="group" aria-label="Choose a color theme: three light and three dark">
         <span class="theme-caption" aria-hidden="true">Pick a vibe</span>
-        <button class="swatch" data-theme="light" style="--sw1:#FFB4D8;--sw2:#68D5ED" aria-label="Bubblegum theme" title="Bubblegum" type="button"></button>
-        <button class="swatch" data-theme="dark" style="--sw1:#FFD166;--sw2:#FB8FD9" aria-label="Midnight Pop theme" title="Midnight Pop" type="button"></button>
-        <button class="swatch" data-theme="aurora" style="--sw1:#AAFFDA;--sw2:#8B9CFF" aria-label="Cosmic Candy theme" title="Cosmic Candy" type="button"></button>
-        <button class="swatch" data-theme="sunset" style="--sw1:#FFD36F;--sw2:#FF9A72" aria-label="Citrus Pop theme" title="Citrus Pop" type="button"></button>
-        <button class="swatch" data-theme="forest" style="--sw1:#C7F08B;--sw2:#76D9CE" aria-label="Mint Arcade theme" title="Mint Arcade" type="button"></button>
+        <button class="swatch" data-theme="light" style="--sw-bg:#FFF8FC;--sw1:#FFB4D8;--sw2:#68D5ED" aria-label="Bubblegum, light theme" title="Bubblegum (Light)" type="button"></button>
+        <button class="swatch" data-theme="dark" style="--sw-bg:#18132B;--sw1:#FFD166;--sw2:#FB8FD9" aria-label="Midnight Pop, dark theme" title="Midnight Pop (Dark)" type="button"></button>
+        <button class="swatch" data-theme="sunset" style="--sw-bg:#FFF8EB;--sw1:#FFD36F;--sw2:#FF9A72" aria-label="Citrus Pop, light theme" title="Citrus Pop (Light)" type="button"></button>
+        <button class="swatch" data-theme="aurora" style="--sw-bg:#120D28;--sw1:#AAFFDA;--sw2:#8B9CFF" aria-label="Cosmic Candy, dark theme" title="Cosmic Candy (Dark)" type="button"></button>
+        <button class="swatch" data-theme="forest" style="--sw-bg:#F1FFF8;--sw1:#C7F08B;--sw2:#76D9CE" aria-label="Mint Arcade, light theme" title="Mint Arcade (Light)" type="button"></button>
+        <button class="swatch" data-theme="ocean" style="--sw-bg:#0A1A32;--sw1:#82E5FF;--sw2:#B997FF" aria-label="Electric Blue, dark theme" title="Electric Blue (Dark)" type="button"></button>
       </div>
     </div>
   </div>
@@ -811,7 +829,7 @@
             Materials Engineering, University of Toronto
           </span>
           <h1>Curious about how things work.<br><em>Driven to make them better.</em></h1>
-          <p class="hero-sub">I'm Ahnaf, a third-year Materials Engineering student at U of T. I love design, hands-on problem solving, and the people who bring an idea to life.</p>
+          <p class="hero-sub">I'm Ahnaf, a third-year Materials Engineering student at the University of Toronto. I love design, hands-on problem solving, and the people who bring an idea to life.</p>
           <div class="hero-meta">
             <span class="pill">Class of 2T8 + PEY</span>
             <span class="pill">Biomaterials theme</span>
@@ -841,7 +859,7 @@
     <div class="wrap">
       <div class="section-head">
         <span class="kicker">About</span>
-        <h2>Engineering with a specific destination in mind</h2>
+        <h2>Engineering with a Specific Destination in Mind</h2>
       </div>
       <div class="about-body">
         <div>
@@ -850,11 +868,11 @@
           <p>Outside class, I work to make my communities more welcoming through equity, diversity, and inclusion work, mentoring, and campus leadership. I lead with curiosity, follow through on commitments, and enjoy working with people from different backgrounds.</p>
         </div>
         <div class="about-card">
-          <h3>Quick facts</h3>
+          <h3>Quick Facts</h3>
           <ul>
             <li>Based in Toronto and Oshawa, Ontario</li>
             <li>Bachelor of Applied Science in Engineering, 2024–2029</li>
-            <li>Enrolled in the PEY Co-Op Program</li>
+            <li>Enrolled in the PEY Co-op Program</li>
             <li>Coursework: Engineering Biology, Intro to Biomaterials, Mechanical Behaviour of Materials, Organic Materials Chemistry, Materials Physics</li>
             <li>SOLIDWORKS Additive Manufacturing Associate</li>
           </ul>
@@ -866,8 +884,8 @@
   <section id="projects" class="section-alt">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">Selected projects</span>
-        <h2>Hands-on work in design, research, and testing</h2>
+        <span class="kicker">Selected Projects</span>
+        <h2>Hands-On Work in Design, Research, and Testing</h2>
         <p>A few things I've built, researched, or led on project teams.</p>
       </div>
       <div class="project-list">
@@ -876,8 +894,8 @@
           <div class="project-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </div>
-          <h3>Biomedical toolkit</h3>
-          <span class="project-meta">Engineers Without Borders, U of T · Sept 2025 – Apr 2026</span>
+          <h3>Biomedical Toolkit</h3>
+          <span class="project-meta">Engineers Without Borders, University of Toronto · Sept 2025 – Apr 2026</span>
           <p>Helped research, design, prototype, and test a modular physical toolkit for biomedical education, from concept through 3D-printed components and technical documentation.</p>
           <div class="tag-row">
             <span class="tag">Tinkercad</span>
@@ -890,7 +908,7 @@
           <div class="project-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 20h10M9 16l2.5-4 2 2.5L17 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3>AI multimodal workstation</h3>
+          <h3>AI Multimodal Workstation</h3>
           <span class="project-meta">University of Toronto · Team lead · Jan – Apr 2025</span>
           <p>Led a team of six to design an AI-enabled multimodal workstation through to a working prototype. I assigned tasks based on team strengths, tracked deadlines with a Gantt chart, and conducted primary research to define the design goals.</p>
           <div class="tag-row">
@@ -904,8 +922,8 @@
           <div class="project-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.5 15h9" stroke="currentColor" stroke-width="1.6"/></svg>
           </div>
-          <h3>Reactions division</h3>
-          <span class="project-meta">UofT Chemical Vehicles · Sept – Oct 2025</span>
+          <h3>Reactions Division</h3>
+          <span class="project-meta">University of Toronto Chemical Vehicles · Sept – Oct 2025</span>
           <p>Studied reaction kinetics and concentration effects to select chemical reactions for a competition car's stopping mechanism, then ran lab experiments to hit competition-ready stopping times.</p>
           <div class="tag-row">
             <span class="tag">Reaction kinetics</span>
@@ -920,8 +938,8 @@
   <section id="experience">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">Leadership &amp; experience</span>
-        <h2>Where I've shown up and led</h2>
+        <span class="kicker">Leadership and Experience</span>
+        <h2>Where I've Shown Up and Led</h2>
         <p>A mix of engineering, community, and campus leadership roles.</p>
       </div>
       <div class="timeline">
@@ -984,11 +1002,11 @@
     <div class="wrap">
       <div class="section-head">
         <span class="kicker">Skills</span>
-        <h2>Tools and strengths I bring to a team</h2>
+        <h2>Tools and Strengths I Bring to a Team</h2>
       </div>
       <div class="skills-grid">
         <div class="skill-group">
-          <h3>Engineering software</h3>
+          <h3>Engineering Software</h3>
           <div class="skill-pills">
             <span class="skill-pill">SOLIDWORKS</span>
             <span class="skill-pill">ANSYS Mechanical</span>
@@ -996,7 +1014,7 @@
           </div>
         </div>
         <div class="skill-group">
-          <h3>Programming &amp; methods</h3>
+          <h3>Programming and Methods</h3>
           <div class="skill-pills">
             <span class="skill-pill">Python</span>
             <span class="skill-pill">Google Sheets</span>
@@ -1007,7 +1025,7 @@
           </div>
         </div>
         <div class="skill-group">
-          <h3>Leadership &amp; languages</h3>
+          <h3>Leadership and Languages</h3>
           <div class="skill-pills">
             <span class="skill-pill">Program development</span>
             <span class="skill-pill">Team leadership</span>
@@ -1023,15 +1041,15 @@
   <section id="education">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">Education &amp; recognition</span>
-        <h2>Academic background</h2>
+        <span class="kicker">Education and Recognition</span>
+        <h2>Academic Background</h2>
       </div>
       <div class="edu-grid">
         <div>
           <div class="edu-card">
             <h3>University of Toronto</h3>
             <div class="edu-when">Bachelor of Applied Science, Engineering · 2024 – 2029</div>
-            <p>Specializing in the Biomaterials theme, enrolled in the PEY Co-Op Program. Active in EngSoc, Engineers Without Borders, and UT Chemical Vehicles.</p>
+            <p>Specializing in the Biomaterials theme, enrolled in the PEY Co-op Program. Active in the University of Toronto Engineering Society, Engineers Without Borders, and University of Toronto Chemical Vehicles.</p>
           </div>
           <div class="edu-card">
             <h3>Minor in Bioengineering</h3>
@@ -1045,7 +1063,7 @@
           </div>
         </div>
         <div class="edu-card" style="margin-bottom:0;">
-          <h3>Honors &amp; certifications</h3>
+          <h3>Honors and Certifications</h3>
           <ul class="honor-list">
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.6 6.2L21 9l-5 4.4L17.4 21 12 17.3 6.6 21 8 13.4 3 9l6.4-0.8L12 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg> SOLIDWORKS Additive Manufacturing Associate</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.6 6.2L21 9l-5 4.4L17.4 21 12 17.3 6.6 21 8 13.4 3 9l6.4-0.8L12 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg> Platinum Award</li>
@@ -1061,8 +1079,8 @@
   <section id="interests" class="section-alt">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">Beyond the lab</span>
-        <h2>A little more about me</h2>
+        <span class="kicker">Beyond the Lab</span>
+        <h2>A Little More About Me</h2>
         <p>The things I keep coming back to when the schoolwork is done.</p>
       </div>
       <div class="interest-grid">
@@ -1092,7 +1110,7 @@
   <section id="idea-lab">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">Make an idea</span>
+        <span class="kicker">Make an Idea</span>
         <h2>Welcome to the Idea Lab</h2>
         <p>Pick a challenge and a material to see what they could become together.</p>
       </div>
@@ -1129,8 +1147,8 @@
   <section id="play">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">A quick break</span>
-        <h2>Engineering memory game</h2>
+        <span class="kicker">A Quick Break</span>
+        <h2>Engineering Memory Game</h2>
         <p>Flip two cards to find matching engineering ideas. Anyone can play; no formulas are needed.</p>
       </div>
       <div class="match-wrap">
@@ -1149,7 +1167,7 @@
     <div class="wrap">
       <div class="contact-panel">
         <div class="dots" aria-hidden="true"></div>
-        <h2>Let's talk</h2>
+        <h2>Let's Talk</h2>
         <p>I'd love to connect about engineering projects, design, materials, medical technology, or a shared interest. Let's build something meaningful.</p>
         <div class="contact-cta">
           <a class="btn btn-primary" href="mailto:ahnaf.hawlader@mail.utoronto.ca">ahnaf.hawlader@mail.utoronto.ca</a>
@@ -1169,7 +1187,7 @@
 <script>
 (function () {
   var root = document.documentElement;
-  var THEMES = ['light', 'dark', 'aurora', 'sunset', 'forest'];
+  var THEMES = ['light', 'dark', 'sunset', 'aurora', 'forest', 'ocean'];
 
   function getStored() {
     try { return localStorage.getItem('ahnaf-theme'); } catch (e) { return null; }
