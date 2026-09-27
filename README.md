@@ -704,9 +704,8 @@
 
 <header class="nav">
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-  <div class="nav-inner">
-    <a href="#top" class="nav-name">Ahnaf Hawlader</a>
-    <div class="nav-right">
+<div class="nav-inner">
+  <div class="nav-right">
       <details class="mobile-menu">
         <summary>Menu</summary>
         <nav aria-label="Mobile navigation">
